@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Week 6 • For My Pretty Wife</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <!-- Howler -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body class="bg-[#FFF8F8] text-[#5B4A4A] overflow-hidden select-none">
+
+    <!-- ===================================================== -->
+    <!-- Welcome Overlay -->
+    <!-- ===================================================== -->
+
+    <div
+        id="welcomeOverlay"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-[#FFF5F7]"
+    >
+
+        <div
+            id="welcomeCard"
+            class="text-center px-10 py-12 rounded-3xl bg-white shadow-2xl max-w-sm border border-pink-100"
+        >
+
+            <div class="text-6xl mb-5">
+                
+            </div>
+
+            <h1
+                class="font-cute text-5xl text-pink-500"
+            >
+                I Love You 3000
+            </h1>
+
+            <p
+                class="mt-4 text-sm text-gray-500 leading-relaxed"
+            >
+                Shush, don't argue, iloveyoumore nga kasi!
+            </p>
+
+            <button
+
+                id="openButton"
+
+                class="mt-8 px-8 py-3 rounded-full bg-pink-300 hover:bg-pink-400 active:scale-95 transition-all duration-300 text-white font-semibold shadow-lg"
+
+            >
+                Open ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- Main App -->
+    <!-- ===================================================== -->
+
+    <main
+        id="app"
+        class="relative h-screen w-screen overflow-hidden"
+    >
+
+        <!-- =============================================== -->
+        <!-- Landing View -->
+        <!-- =============================================== -->
+
+        <section
+
+            id="landingView"
+
+            class="absolute inset-0 flex flex-col justify-center items-center px-6"
+
+        >
+
+            <h1
+
+                class="font-cute text-5xl text-pink-500 mb-10 text-center"
+
+            >
+
+                For my pretty wife
+
+            </h1>
+
+            <div
+
+                class="grid grid-cols-2 gap-6 w-full max-w-sm"
+
+            >
+
+                <!-- Camera -->
+
+                <button
+
+                    class="feature-btn"
+
+                    data-section="camera"
+
+                >
+
+                    <div class="feature-card">
+
+                        <img
+
+                            src="assets/camera-icon.png"
+
+                            class="feature-icon"
+
+                            alt="Camera"
+
+                        >
+
+
+                    </div>
+
+                </button>
+
+                <!-- Music -->
+
+                <button
+
+                    class="feature-btn"
+
+                    data-section="music"
+
+                >
+
+                    <div class="feature-card">
+
+                        <img
+
+                            src="assets/music-icon.png"
+
+                            class="feature-icon"
+
+                            alt="Music"
+
+                        >
+
+                       
+
+                    </div>
+
+                </button>
+
+                <!-- Flower -->
+
+                <button
+
+                    class="feature-btn"
+
+                    data-section="flower"
+
+                >
+
+                    <div class="feature-card">
+
+                        <img
+
+                            src="assets/flower-icon.png"
+
+                            class="feature-icon"
+
+                            alt="Flower"
+
+                        >
+
+                        
+
+                    </div>
+
+                </button>
+
+                <!-- Mail -->
+
+                <button
+
+                    class="feature-btn"
+
+                    data-section="mail"
+
+                >
+
+                    <div class="feature-card">
+
+                        <img
+
+                            src="assets/mail-icon.png"
+
+                            class="feature-icon"
+
+                            alt="Mail"
+
+                        >
+
+                        
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =============================================== -->
+        <!-- Detail View -->
+        <!-- =============================================== -->
+
+        <section
+
+            id="detailView"
+
+            class="absolute inset-0 hidden flex flex-col items-center justify-center px-6"
+
+        >
+
+            <!-- Back -->
+
+            <button
+
+                id="backButton"
+
+                class="absolute top-6 left-6 px-5 py-2 rounded-full bg-white shadow-lg border border-pink-100 active:scale-95 transition"
+
+            >
+
+                ← Back
+
+            </button>
+
+            <!-- Polaroid -->
+
+            <div
+
+                id="polaroidCard"
+
+                class="bg-white rounded-2xl shadow-2xl p-5 w-full max-w-sm"
+
+            >
+
+                <!-- Image -->
+
+                <div class="rounded-xl overflow-hidden bg-pink-50">
+
+                    <img
+                        id="detailImage"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+                <!-- Caption -->
+
+                <div class="pt-5">
+
+                    <h2
+
+                        id="detailHeading"
+
+                        class="font-primary text-3xl"
+
+                    >
+
+                    </h2>
+
+                    <p
+
+                        id="detailMessage"
+
+                        class="mt-4 text-gray-600 leading-relaxed"
+
+                    >
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =============================================== -->
+    <!-- Modules -->
+    <!-- =============================================== -->
+
+    <script
+        type="module"
+        src="config.js"
+    ></script>
+
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
+</body>
+
+</html>

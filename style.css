@@ -1,0 +1,440 @@
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+    background:#FFF8F8;
+}
+
+body{
+    font-family:'Playfair Display', serif;
+    color:#5B4A4A;
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+.font-cute{
+    font-family:'Caveat', cursive;
+}
+
+.font-primary{
+    font-family:'Playfair Display', serif;
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+    display:none;
+}
+
+*{
+    scrollbar-width:none;
+}
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+img{
+    display:block;
+    width:100%;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button{
+    outline:none;
+    border:none;
+    cursor:pointer;
+    background:transparent;
+}
+
+button:focus{
+    outline:none;
+}
+
+/* ==========================================================
+   FEATURE GRID
+========================================================== */
+
+.feature-btn{
+    width:100%;
+}
+
+.feature-card{
+
+    background:#FFFFFF;
+
+    border-radius:28px;
+
+    padding:24px 18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    min-height:160px;
+
+    border:1px solid rgba(255,214,223,.7);
+
+    box-shadow:
+        0 12px 30px rgba(255,170,190,.15),
+        0 3px 8px rgba(0,0,0,.05);
+
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        background .28s ease;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 42px rgba(255,170,190,.22),
+        0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.feature-card:active{
+
+    transform:scale(.96);
+
+}
+
+.feature-icon{
+
+    width:70px;
+    height:70px;
+
+    object-fit:contain;
+
+    pointer-events:none;
+
+}
+
+.feature-label{
+
+    font-family:'Caveat', cursive;
+
+    font-size:2rem;
+
+    color:#C26B83;
+
+    line-height:1;
+
+}
+
+/* ==========================================================
+   POLAROID CARD
+========================================================== */
+
+#polaroidCard{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:18px;
+
+    box-shadow:
+        0 30px 55px rgba(0,0,0,.12),
+        0 8px 20px rgba(255,186,204,.25);
+
+    transform-origin:center;
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+#polaroidCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    border:2px solid rgba(255,221,228,.45);
+
+    pointer-events:none;
+
+}
+
+#detailImage{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    border-radius:16px;
+
+    object-fit:contain;
+
+    background:#FFEFF4;
+
+}
+
+/* ==========================================================
+   BACK BUTTON
+========================================================== */
+
+#backButton{
+
+    backdrop-filter:blur(10px);
+
+    background:rgba(255,255,255,.92);
+
+    color:#6D4E57;
+
+    font-weight:600;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+#backButton:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.12);
+
+}
+
+#backButton:active{
+
+    transform:scale(.95);
+
+}
+
+/* ==========================================================
+   WELCOME CARD
+========================================================== */
+
+#welcomeCard{
+
+    animation:
+        floatCard 4.5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ==========================================================
+   FADE UTILITIES
+========================================================== */
+
+.fade-hidden{
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+.fade-visible{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+/* ==========================================================
+   GLASS EFFECT
+========================================================== */
+
+.glass{
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.72);
+
+}
+
+/* ==========================================================
+   POLAROID TEXT
+========================================================== */
+
+#detailHeading{
+
+    color:#A86075;
+
+    text-align:center;
+
+    font-size:2rem;
+
+    flex-shrink:0;
+
+}
+
+#detailMessage{
+
+    margin-top:18px;
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    text-align:center;
+
+    color:#6A5A5A;
+
+    white-space:pre-line;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    max-height:300px; /* adjust to your liking */
+
+    padding-right:6px;
+
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+
+}
+
+#detailMessage::-webkit-scrollbar{
+    display:none;
+}
+
+/* ==========================================================
+   LANDING TITLE
+========================================================== */
+
+#landingView h1{
+
+    text-shadow:
+        0 2px 12px rgba(255,183,201,.35);
+
+}
+
+/* ==========================================================
+   MOBILE POLISH
+========================================================== */
+
+@media (max-width:640px){
+
+    .feature-card{
+
+        min-height:150px;
+
+        padding:22px 14px;
+
+    }
+
+    .feature-icon{
+
+        width:64px;
+        height:64px;
+
+    }
+
+    .feature-label{
+
+        font-size:1.8rem;
+
+    }
+
+    #polaroidCard{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLETS
+========================================================== */
+
+@media (min-width:768px){
+
+    #polaroidCard{
+
+        max-width:430px;
+
+    }
+
+}
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width:1024px){
+
+    .feature-card{
+
+        min-height:180px;
+
+    }
+
+    .feature-icon{
+
+        width:78px;
+        height:78px;
+
+    }
+
+}
